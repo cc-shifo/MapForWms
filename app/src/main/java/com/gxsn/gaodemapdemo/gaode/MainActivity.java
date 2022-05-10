@@ -9,7 +9,10 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.amap.api.maps.AMap;
+import com.amap.api.maps.CameraUpdateFactory;
 import com.amap.api.maps.MapView;
+import com.amap.api.maps.model.CameraPosition;
+import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.MyLocationStyle;
 import com.amap.api.maps.model.TileOverlayOptions;
 import com.gxsn.gaodemapdemo.R;
@@ -45,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         initAMap();
 
         setAMap();
-
 
         //加载自定义wms
         HeritageScopeTileProvider tileProvider = new HeritageScopeTileProvider();
@@ -119,6 +121,12 @@ public class MainActivity extends AppCompatActivity {
         aMap.setMyLocationEnabled(true);// 设置为true表示显示定位层并可触发定位，false表示隐藏定位层并不可触发定位，默认是false
         // 设置定位的类型为定位模式 ，可以由定位、跟随或地图根据面向方向旋转几种
         aMap.setMyLocationType(AMap.LOCATION_TYPE_LOCATE);
+        // LatLng latLng = new LatLng(31.247, 105.565);// 庐山县经纬度
+        // aMap.moveCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(
+        //         latLng, 12, 30, 30)));
+        final LatLng LUSHANXIAN = new LatLng(30.145077, 102.933618);// 庐山县经纬度
+        aMap.moveCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(
+                LUSHANXIAN, 9, 30, 30)));
     }
 
 
