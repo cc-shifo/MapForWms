@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.gxsn.gaodemapdemo.gaode.MainActivity"
+    tools:context="com.example.gaodemapdemo.gaode.MainActivity"
     tools:showIn="@layout/activity_main">
 
 
@@ -16,7 +16,6 @@
 
 
     </com.amap.api.maps.MapView>
-
 
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/acb_btn_tian"
@@ -29,6 +28,14 @@
         android:layout_width="wrap_content"
         android:text="去谷歌"
         android:layout_marginLeft="100dp"
+        android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv_zoom_level"
+        android:layout_width="wrap_content"
+        android:text="缩放等级"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="200dp"
         android:layout_height="wrap_content" />
 
 

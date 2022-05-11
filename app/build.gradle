@@ -4,7 +4,10 @@ android {
     compileSdkVersion 25
     buildToolsVersion "26.0.0"
     defaultConfig {
-        applicationId "com.gxsn.gaodemapdemo"
+        // B1:B2:20:9F:1D:39:42:B7:10:28:65:FF:75:9B:72:C5:65:1D:F4:46
+        // Android Studio获取SHA1
+        // keytool -v -list -keystore  keystore文件路径
+        applicationId "com.example.gaodemapdemo"
         minSdkVersion 14
         targetSdkVersion 26
         versionCode 1
@@ -17,11 +20,30 @@ android {
         }
     }
 
+    signingConfigs {
+        config {
+            keyAlias "key0"
+            keyPassword "123456"
+            storeFile file("../mykeystore.jks")
+            storePassword "123456"
+        }
+    }
 
     buildTypes {
-        release {
+        debug {
+            shrinkResources false
+            zipAlignEnabled false
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+
+        release {
+            shrinkResources false
+            zipAlignEnabled false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 
@@ -39,7 +61,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.android.support:design:25.3.1'
-    implementation files('libs/Android_Map3D_SDK_V4.1.2_20161104.jar')
+    // implementation files('libs/Android_Map3D_SDK_V4.1.2_20161104.jar')
     implementation files('libs/tiandituapi3.0.1.jar')
     implementation 'com.github.chrisbanes.photoview:library:1.2.4'
 }
