@@ -8,7 +8,7 @@ android {
         // Android Studio获取SHA1
         // keytool -v -list -keystore  keystore文件路径
         applicationId "com.example.gaodemapdemo"
-        minSdkVersion 14
+        minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
