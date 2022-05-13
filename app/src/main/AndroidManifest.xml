@@ -45,6 +45,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".gaode.gaodesource.GaoDeSourceActivity"
+            android:exported="false" />
+        <activity
             android:name=".gaode.wgs84Merctorsource.Wgs84MercatorActivity"
             android:exported="false" />
         <activity

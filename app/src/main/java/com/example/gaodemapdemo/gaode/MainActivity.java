@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.gaodemapdemo.R;
+import com.example.gaodemapdemo.gaode.gaodesource.GaoDeSourceActivity;
 import com.example.gaodemapdemo.gaode.tianditudatasource.MainTianDiTuSrcActivity;
 import com.example.gaodemapdemo.gaode.wgs84Merctorsource.Wgs84MercatorActivity;
 
@@ -45,5 +46,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button buttonGaoDeSrcActivity =
+                (Button) findViewById(R.id.btn_start_gao_de_src_activity);
+        buttonGaoDeSrcActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GaoDeSourceActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
