@@ -64,4 +64,5 @@ dependencies {
     // implementation files('libs/Android_Map3D_SDK_V4.1.2_20161104.jar')
     implementation files('libs/tiandituapi3.0.1.jar')
     implementation 'com.github.chrisbanes.photoview:library:1.2.4'
+    implementation 'com.google.maps.android:android-maps-utils:2.3.0'
 }
